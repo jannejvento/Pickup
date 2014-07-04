@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="form">
+        <div class="xs-col-12 text-center">
+        <form name="loginForm" novalidate
+              ng-submit="login()">
+                <div class="row">
+                    <div class="xs-col-6">
+                        <h2 >Please login</h2>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Email" ng-model="user.email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="Password" ng-model="user.password">
+                </div>
+                <div class="clearfix">
+                    {{error}}
+                </div>
+                <div class="form-group">
+                    <a href="" ng-click="login()" class="btn btn-primary">Login</a> 
+                     or <a href="" ng-click = "signup()">Create account</a>
+
+                </div>
+            </div>    
+        </form>
+        
+    </div>
+    </div>
+</div>

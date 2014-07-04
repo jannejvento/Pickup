@@ -1,0 +1,32 @@
+
+    <!--
+        <div ng-if="communicationInfo.length === 0">
+            <div class="col-xs-7">
+                <span ng-if="lastSpot()">
+                        <strong>&lt;!&ndash;<span class="text-success">{{lastSpot().lat |number:3}} / {{lastSpot().lng | number:3}} </span>/&ndash;&gt;
+                        Accuracy:
+                    <span class=""
+                          ng-class="{'text-primary': lastSpot().acc<=100, 'text-danger': lastSpot().acc>100,}">{{lastSpot().acc}}m</span>
+                    </strong> (Spots: {{ spotCount()}})
+
+            </span>
+        </div>
+        <div class="col-xs-5 text-right"><p><strong>{{user.email}}</strong> - <a href="#/{{spectateUrl}}">Spectator link</a></p></div>
+    </div>
+</div>-->
+<div class="row">
+    <button ng-click="trackMe()" class="col-xs-4 btn" ng-class="{'btn-primary': trackingState === 0, 'btn-warning': trackingState === 1, 'btn-success': trackingState === 2}">
+        <span>{{ trackMeButtonText }}</span>
+    </button>
+    <button ng-click="endRoute()" class = " col-xs-4 btn" ng-class="{'btn-danger':trackingState > 0}" ng-if="trackingState > 0">
+        <span>{{ endRouteButtonText }}</span>
+    </button>
+    <span class="col-xs-4 text text-primary" ng-if = "communicationInfo.length > 0">{{ communicationInfo }}</span>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 text-primary pull-right">{{ user.first_name }} {{ user.last_name }}</div>
+</div>
+<div class="row">
+    <leaflet defaults="defaults" paths = "paths" markers ="markers" center="center" height="400px" width="100%"></leaflet>
+</div>

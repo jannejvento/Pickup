@@ -1,0 +1,34 @@
+
+<div class="row text-center">
+    <h1>Wanna stalk? Stalk.</h1>
+</div>
+<hr/>
+<div class="col-xs-offset-2 col-xs-8">
+    <div class="row col-center">
+        <div class=" btn btn-lg btn-success col-xs-12" ng-click = "goTrackingState()">
+            Track me!
+        </div>
+    </div>
+
+    <h3>People you follow</h3>
+    <ul class="list-group">
+        <div ng-repeat="followee in followees" class="list-group-item">
+            <div class="row">
+                <div class="col-xs-10 text-info">{{  followee.email}}</div>
+                <input class="col-xs-2"  type="checkbox" value="followee.approved">
+            </div>
+        </div>
+    </ul>
+
+    <h3>People following you</h3>
+
+    <ul class="list-group">
+        <div ng-repeat="follower in followers" class="list-group-item">
+            <div class="row">
+                <div class="col-xs-10 text-warning">{{  follower.email}}</div>
+                <input class="col-xs-2"  type="checkbox" value="follower.approved">
+            </div>
+        </div>
+    </ul>
+
+</div>
